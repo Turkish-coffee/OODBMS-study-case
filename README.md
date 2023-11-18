@@ -6,8 +6,9 @@ this study case will cover an implementation of a OODBMS with oracle DB.
 # 1. Colima Installation (optional)
 
 
-For people like me with non-traditional chips like Apple's ARM chips, Colima must be installed to emulate 86x_64 chip instructions.
-Once installed, run in cmd line the follwoing:
+For non-traditional chips like Apple's ARM chips, Colima must be installed to emulate 86x64 chip instructions.
+Once installed, run the follwoing:
+
 	colima start --arch x86_64 --memory 4
 
 For each commands whcih will be done bellow, don't forget to add the following prefix: <Colima –ssh> .

@@ -1,0 +1,24 @@
+CREATE OR REPLACE PROCEDURE TURKISHCOFFEE.QUESTION1
+IS 
+CURSOR LOG_INFO IS
+	select l.codelogi, count (nt.poste)
+		from logiciel l, the (
+			select a.installs from logiciel a
+			where a.codelogi=l.codelogi
+			) nt
+			group by l.codelogi;
+		
+LOGI_COUNTER NUMBER;
+LOGI_ID LOGICIEL.CODELOGI%TYPE;
+
+BEGIN
+	OPEN LOG_INFO;
+	FETCH LOG_INFO INTO LOGI_ID, LOGI_COUNTER;
+	WHILE (LOG_INFO%FOUND) 
+	LOOP
+		INSERT INTO NB_INSTALL_LOG (logi, nbr)
+		VALUES (LOGI_ID , LOGI_COUNTER);
+		FETCH LOG_INFO INTO LOGI_ID, LOGI_COUNTER;
+	END LOOP;
+CLOSE LOG_INFO;
+END QUESTION1;

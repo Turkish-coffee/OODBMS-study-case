@@ -8,7 +8,7 @@ this study case will cover an implementation of a OODBMS with oracle DB.
 
 For people like me with non-traditional chips like Apple's ARM chips, Colima must be installed to emulate 86x_64 chip instructions.
 Once installed, run in cmd line the follwoing:
-	-colima start --arch x86_64 --memory 4
+	colima start --arch x86_64 --memory 4
 
 For each commands whcih will be done bellow, don't forget to add the following prefix: <Colima –ssh> .
 
@@ -31,23 +31,23 @@ I'd like to make it clear that I'll be using the terminal for the rest of the ex
 
 Once Docker has been installed, we need to Pull an Oracle image via the Docker hub (for this tutorial, I've chosen the following image (other choices are possible): https://hub.docker.com/r/gvenzl/oracle-xe ). 
 
-	-docker pull gvenzl/oracle-xe
+	docker pull gvenzl/oracle-xe
 
 Once the image has been pulled, it must be containerized:
 
-	-docker run -d -p 1521:1521 -e ORACLE_PASSWORD=<your password> -v oracle-volume:/opt/oracle/oradata gvenzl/oracle-xe -full
+	docker run -d -p 1521:1521 -e ORACLE_PASSWORD=<your password> -v oracle-volume:/opt/oracle/oradata gvenzl/oracle-xe -full
 
 From now on, oracle is containerized and deployed on docker. Let's create our first schema:
 
-	-docker container list
+	docker container list
 
 The command should display the container with its ID.
 		
 Copy the id and enter the following command:
 
-	-docker exec <your container ID> createAppUser <your username> <yout user password> [<your target DATABASE>]
+	docker exec <your container ID> createAppUser <your username> <yout user password> [<your target DATABASE>]
 		
-		--> : the default database is XEPDB1
+  --> : the default database is XEPDB1
 
 
 

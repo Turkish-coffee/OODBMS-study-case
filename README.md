@@ -6,7 +6,7 @@ this study case will cover an implementation of a OODBMS with oracle DB.
 # 1. Colima Installation (optional)
 
 
-For non-traditional chips like Apple's ARM chips, Colima must be installed to emulate 86x64 chip instructions.
+For non-traditional chips like Apple's ARM chips, Colima must be installed to emulate x86_64 chip instructions.
 Once installed, run the follwoing:
 
 	colima start --arch x86_64 --memory 4
@@ -15,8 +15,7 @@ For each commands whcih will be done bellow, don't forget to add the following p
 
 # 2. Docker Installation
 
-Docker is a containerization tool for creating isolated, reliable work environments. Unlike classic VMware, which has to emulate an entire operating system, Docker works via DockerDemon, which saves precious resources when deploying applications
-
+Docker is a containerization tool for creating isolated, reliable working environments.
 The first step is to install docker via the link below:
 
 https://www.docker.com/get-started/
